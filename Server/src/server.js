@@ -16,7 +16,15 @@ const app = express();
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin || /^http:\/\/localhost:\d+$/.test(origin)) {
+      const allowedOrigins = [
+        "https://bug-tracker-murex-eight.vercel.app",
+      ];
+
+      if (
+        !origin ||
+        allowedOrigins.includes(origin) ||
+        /^http:\/\/localhost:\d+$/.test(origin)
+      ) {
         callback(null, true);
       } else {
         callback(new Error("Not allowed by CORS"));
