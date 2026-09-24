@@ -1,0 +1,49 @@
+/* ============================================================
+   AAYAN THEME  (Tailwind v4)  ->  agar aapke index.css ki pehli
+   line  @import "tailwindcss";  hai to ye use karo.
+   Tailwind v3 (@tailwind base;...) ho to tailwind.config.js use karo.
+
+   Trick: "blue-*" ko brand green se replace kiya hai, isliye
+   aapke saare purane  bg-blue-600 / text-blue-600 / ring-blue-100
+   automatically Aayan green ban jaate hain. Har file edit nahi karni.
+   ============================================================ */
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+  --color-blue-50:  #eff7f2;
+  --color-blue-100: #dceee3;
+  --color-blue-200: #badcc7;
+  --color-blue-300: #8fc4a3;
+  --color-blue-400: #62a97f;
+  --color-blue-500: #3d8b57; /* Aayan primary green */
+  --color-blue-600: #367f4f; /* buttons / links (AA contrast on white) */
+  --color-blue-700: #2b6a55;
+  --color-blue-800: #24564a;
+  --color-blue-900: #1e453c;
+}
+
+:root {
+  --brand-green: #3d8b57;
+  --brand-teal: #2f6664;
+  --page-bg: #f3f7f5;
+}
+
+/* Laptop par sab kuch thoda chhota (rem-based, isliye text + spacing + buttons sab scale hote hain).
+   Mobile par 16px hi rehta hai. Aur chhota chahiye to 14px ko 13px karo. */
+@media (min-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+body {
+  background: var(--page-bg);
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+}
+
+.bg-brand {
+  background-image: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-teal) 100%);
+}
