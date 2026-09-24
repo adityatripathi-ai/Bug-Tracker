@@ -35,7 +35,7 @@ const asUrl = (path) => {
 
   // Backend uploaded file
   if (path.startsWith("/uploads")) {
-    return `http://localhost:5000${path}`;
+    return `${import.meta.env.VITE_API_URL.replace("/api", "")}${path}`;
   }
 
   return path;
