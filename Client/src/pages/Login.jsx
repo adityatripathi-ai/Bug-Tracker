@@ -36,7 +36,7 @@ const Login = () => {
   return (
     <div className="min-h-screen bg-[#f3f7f5] flex items-center justify-center p-4">
       <div className="w-full max-w-5xl bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden grid grid-cols-1 md:grid-cols-2">
-        {/* Brand panel: mobile par chhota header, md+ par full panel */}
+        {/* Brand panel: on mobile short header, on md+ full panel */}
         <div className="bg-gradient-to-br from-[#3d8b57] to-[#2f6664] text-white flex flex-col items-center justify-center text-center px-6 py-8 md:p-14">
           <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white/15 flex items-center justify-center mb-4 md:mb-6">
             <Bug size={28} />

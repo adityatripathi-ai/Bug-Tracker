@@ -340,7 +340,7 @@ const BugDetails = () => {
         </p>
       </div>
 
-      {/* Lifecycle: mobile par bhi ek row me fit hota hai */}
+      {/* Lifecycle: Fit in one row on mobile */}
       <div className="bg-white border border-slate-200 rounded-2xl p-4 sm:p-6 shadow-sm">
         <h2 className="text-lg font-bold text-slate-800 mb-5 sm:mb-6">Lifecycle</h2>
         <div className="flex items-start justify-center">

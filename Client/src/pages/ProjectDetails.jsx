@@ -147,7 +147,7 @@ const ProjectDetails = () => {
         </div>
       </div>
 
-      {/* Stats: mobile par 2 columns */}
+      {/* Stats: on mobile 2 column */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-4 sm:mb-5">
         {stats.map((stat) => {
           const Icon = stat.icon;

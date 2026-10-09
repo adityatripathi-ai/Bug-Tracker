@@ -55,9 +55,9 @@ const MyBugs = () => {
 
   const [previewUrl, setPreviewUrl] = useState(null);
 
-  // =====================================================
+  
   // LOAD DEVELOPER BUGS
-  // =====================================================
+ 
   const loadBugs = async () => {
     try {
       setLoading(true);
@@ -85,9 +85,9 @@ const MyBugs = () => {
     loadBugs();
   }, []);
 
-  // =====================================================
+  
   // STATS
-  // =====================================================
+  
   const stats = useMemo(
     () => [
       {
@@ -114,9 +114,8 @@ const MyBugs = () => {
     [bugs]
   );
 
-  // =====================================================
   // FILTER BUGS
-  // =====================================================
+ 
   const filteredBugs = useMemo(() => {
     if (filter === "all") {
       return bugs;
@@ -127,9 +126,9 @@ const MyBugs = () => {
     );
   }, [bugs, filter]);
 
-  // =====================================================
+ 
   // UPDATE BUG IN STATE
-  // =====================================================
+ 
   const applyUpdatedBug = (bugId, updated) => {
     if (!updated) return;
 
@@ -145,9 +144,9 @@ const MyBugs = () => {
     );
   };
 
-  // =====================================================
+ 
   // UPDATE BUG STATUS
-  // =====================================================
+ 
   const updateStatus = async (bugId, status) => {
     try {
       setUpdatingId(bugId);
@@ -182,9 +181,9 @@ const MyBugs = () => {
     }
   };
 
-  // =====================================================
+  
   // SAVE FIX PROOF
-  // =====================================================
+
   const saveFixProof = async (bugId, proof) => {
     try {
       setSavingProofId(bugId);
@@ -229,9 +228,9 @@ const MyBugs = () => {
     }
   };
 
-  // =====================================================
+
   // LOADING
-  // =====================================================
+ 
   if (loading) {
     return (
       <div className="py-16 flex items-center justify-center gap-2 text-slate-500 text-base">
@@ -245,14 +244,14 @@ const MyBugs = () => {
     );
   }
 
-  // =====================================================
+  
   // MAIN UI
-  // =====================================================
+
   return (
     <div>
-      {/* =================================================
-          PAGE HEADER
-      ================================================= */}
+     
+          {/* PAGE HEADER */}
+     
       <div className="mb-7">
         <h1 className="text-3xl font-bold text-slate-900">
           My Bugs
@@ -263,9 +262,9 @@ const MyBugs = () => {
         </p>
       </div>
 
-      {/* =================================================
-          STATS
-      ================================================= */}
+      
+          {/* STATS */}
+     
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-7">
         {stats.map((stat) => (
           <button
@@ -288,9 +287,9 @@ const MyBugs = () => {
         ))}
       </div>
 
-      {/* =================================================
-          ERROR
-      ================================================= */}
+      
+          {/* ERROR */}
+      
       {error && (
         <div className="mb-5 flex items-center gap-2 bg-red-50 border border-red-100 text-red-600 rounded-xl px-4 py-3 text-base">
           <AlertCircle size={18} />
@@ -298,9 +297,9 @@ const MyBugs = () => {
         </div>
       )}
 
-      {/* =================================================
-          BUG TABLE
-      ================================================= */}
+     
+          {/* BUG TABLE */}
+      
       <div className="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
         {filteredBugs.length === 0 ? (
           <div className="py-16 text-center text-base text-slate-400">
@@ -309,9 +308,8 @@ const MyBugs = () => {
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full min-w-[1350px] text-left">
-              {/* =================================================
-                  TABLE HEADER
-              ================================================= */}
+
+              {/* TABLE HEADER*/}
               <thead className="bg-slate-50 text-sm uppercase tracking-wide text-slate-500">
                 <tr>
                   <th className="px-5 py-4 font-semibold">
@@ -352,14 +350,12 @@ const MyBugs = () => {
                 </tr>
               </thead>
 
-              {/* =================================================
-                  TABLE BODY
-              ================================================= */}
+              {/*   TABLE BODY */}
               <tbody className="divide-y divide-slate-100">
                 {filteredBugs.map((bug) => {
-                  // -------------------------------
+                  
                   // URLs
-                  // -------------------------------
+                  
                   const screenshotUrl = asUrl(
                     bug.screenshotUrl
                   );
@@ -380,9 +376,9 @@ const MyBugs = () => {
                       key={bug._id}
                       className="hover:bg-slate-50"
                     >
-                      {/* =================================================
+                      {/* 
                           BUG
-                      ================================================= */}
+                      */}
                       <td className="px-5 py-4">
                         <button
                           onClick={() =>
@@ -396,34 +392,34 @@ const MyBugs = () => {
                         </button>
                       </td>
 
-                      {/* =================================================
+                      {/* 
                           PROJECT
-                      ================================================= */}
+                      */}
                       <td className="px-5 py-4 text-base text-slate-600">
                         {bug.project?.name || "—"}
                       </td>
 
-                      {/* =================================================
+                      {/* 
                           TYPE
-                      ================================================= */}
+                       */}
                       <td className="px-5 py-4">
                         <TypeBadge
                           type={bug.type}
                         />
                       </td>
 
-                      {/* =================================================
+                      {/* 
                           PRIORITY
-                      ================================================= */}
+                       */}
                       <td className="px-5 py-4">
                         <PriorityBadge
                           priority={bug.priority}
                         />
                       </td>
 
-                      {/* =================================================
+                      {/* 
                           SCREENSHOT
-                      ================================================= */}
+                       */}
                       <td className="px-5 py-4">
                         {screenshotUrl ? (
                           <button
@@ -449,9 +445,9 @@ const MyBugs = () => {
                         )}
                       </td>
 
-                      {/* =================================================
+                      {/* 
                           QA REFERENCE
-                      ================================================= */}
+                       */}
                       <td className="px-5 py-4">
                         {bug.issueLink ? (
                           <a
@@ -496,9 +492,9 @@ const MyBugs = () => {
                         )}
                       </td>
 
-                      {/* =================================================
+                      {/* 
                           FIX PROOF
-                      ================================================= */}
+                       */}
                       <td className="px-5 py-4">
                         {fixLinkUrl ||
                         fixVideoUrl ? (
@@ -564,18 +560,18 @@ const MyBugs = () => {
                         )}
                       </td>
 
-                      {/* =================================================
+                      {/* 
                           CURRENT STATUS
-                      ================================================= */}
+                       */}
                       <td className="px-5 py-4">
                         <StatusBadge
                           status={bug.status}
                         />
                       </td>
 
-                      {/* =================================================
+                      {/* 
                           CHANGE STATUS
-                      ================================================= */}
+                     */}
                       <td className="px-5 py-4">
                         <DeveloperStatusSelect
                           status={bug.status}
@@ -599,9 +595,9 @@ const MyBugs = () => {
         )}
       </div>
 
-      {/* =================================================
+      {/* 
           SCREENSHOT PREVIEW
-      ================================================= */}
+       */}
       {previewUrl && (
         <div
           className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-6"

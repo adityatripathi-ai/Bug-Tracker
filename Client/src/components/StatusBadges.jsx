@@ -8,8 +8,7 @@ import {
 const base =
   "inline-flex items-center whitespace-nowrap px-3 py-1.5 rounded-lg text-sm font-semibold border";
 
-// Note: theme me "blue" ab Aayan green hai. Isliye "in-progress" aur "qa"
-// ke liye asli neela rang "sky" use kiya hai, taaki closed (green) se alag dikhe.
+
 export const StatusBadge = ({ status }) => {
   const styles = {
     open: "bg-red-50 text-red-600 border-red-100",

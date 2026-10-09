@@ -1,7 +1,7 @@
 import { PriorityBadge, StatusBadge, TypeBadge } from "./StatusBadges";
 import { relativeTime } from "../utils/helpers";
 
-// Mobile / tablet par table ki jagah use hota hai
+
 const BugCard = ({ bug, onOpen, showCreated = false, children }) => (
   <div className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm flex flex-col gap-3">
     <div className="flex flex-wrap items-center gap-2">

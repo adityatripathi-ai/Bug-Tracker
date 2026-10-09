@@ -109,13 +109,13 @@ const FixProofPopover = ({ onSave, loading, compact = false }) => {
 
       {open && (
         <>
-          {/* Mobile: dim background jab bottom sheet khule */}
+          {/* Mobile: dim background*/}
           <div
             className="fixed inset-0 z-40 bg-[#183535]/40 sm:hidden"
             onClick={closePopover}
           />
 
-          {/* Mobile: bottom sheet | Laptop: purane jaisa dropdown */}
+          {/* Mobile: bottom sheet | */}
           <div className="fixed left-3 right-3 bottom-3 z-50 bg-white border border-slate-200 rounded-2xl shadow-2xl p-4 sm:absolute sm:left-0 sm:right-auto sm:bottom-auto sm:top-full sm:mt-2 sm:w-72 sm:z-20 sm:rounded-xl sm:shadow-lg sm:p-3">
             <p className="text-sm font-bold text-slate-800 mb-3 sm:hidden">
               Add fix proof

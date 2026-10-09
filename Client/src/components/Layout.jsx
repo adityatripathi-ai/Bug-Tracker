@@ -76,12 +76,12 @@ const Layout = () => {
   const menuItems = getMenuItems(user?.role);
   const pageTitle = getPageTitle(location.pathname);
 
-  // Page badalne par mobile drawer band
+  
   useEffect(() => {
     setSidebarOpen(false);
   }, [location.pathname]);
 
-  // Drawer khula ho to peeche ka page scroll na ho
+ 
   useEffect(() => {
     document.body.style.overflow = sidebarOpen ? "hidden" : "";
     return () => {
@@ -103,7 +103,7 @@ const Layout = () => {
         />
       )}
 
-      {/* SIDEBAR: mobile par drawer, laptop par fixed */}
+      {/* SIDEBAR: on mobile drawer on laptop fix  */}
       <aside
         className={`fixed inset-y-0 left-0 z-50 w-[280px] max-w-[85vw] lg:w-[260px] flex flex-col bg-gradient-to-b from-[#3d8b57] to-[#2f6664] text-white transition-transform duration-300 lg:translate-x-0 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
